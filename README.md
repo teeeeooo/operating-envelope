@@ -1,31 +1,22 @@
-# agent-rule-tree
+# operating-envelope
 
-Reusable generic agent rule tree templates.
+`operating-envelope` is the version-controlled canonical source for the user's agent harness: shared execution policy, reusable Skills, memory/recall architecture, and migration designs for repository-local agent environments.
 
-This repository stores portable agent rule trees that can be copied into small
-projects, scripts, experiments, and lightweight tools.
+Runtime locations such as `~/.codex/AGENTS.md` and `~/.agents/skills/` are deployment surfaces, not the canonical design source. Repository-local projects keep their own invariants, domain truth, and task-specific Skills rather than copying this repository's full policy surface.
 
-The initial `small` template is intentionally minimal. It provides shared agent
-operating rules while keeping project-specific constraints in one overlay file:
-`PROJECT_RULES.md`.
+## Current Direction
 
-## Small Template
+The current redesign targets GPT-6 Astra and follows OpenAI's guidance on instruction sensitivity, initiative and follow-through, explicit delegation policy, and proportional testing. The governing migration design will live under `docs/`.
 
-`templates/small/` contains:
+The intended layers are:
 
-- `AGENTS.md`: common operating rules for agents
-- `AGENT_TASK_ROUTER.md`: lightweight procedures by task type
-- `PROJECT_RULES.md`: project-specific overlay to edit in the target project
+- global `AGENTS.md`: small, always-on execution posture shared across repositories
+- global Skills: reusable workflows that should load only when relevant
+- repository `AGENTS.md`: repository-specific invariants and routing
+- repository Skills: task-specific workflows unique to that repository
+- project knowledge: architecture, validation, decisions, failures, current state, and compact recall indexes
+- historical evidence: logs, retired designs, result records, and diagnostics that should not act as current instructions
 
-Project-specific rules should live in `PROJECT_RULES.md`, not in the common
-agent rules. Keep `AGENTS.md` generic so it can be reused across projects.
+## Existing Small Template
 
-## Usage
-
-1. Copy the files from `templates/small/` into the target project root.
-2. Edit `PROJECT_RULES.md` for the target project.
-3. Keep `AGENTS.md` as the common operating rules.
-4. Adjust only the task types in `AGENT_TASK_ROUTER.md` when needed.
-
-Avoid expanding the template with assumptions from any one project. Add narrow
-local rules in the target project's `PROJECT_RULES.md` instead.
+`templates/small/` is retained as migration input from the repository's previous purpose. It is not automatically authoritative for the new harness architecture.
