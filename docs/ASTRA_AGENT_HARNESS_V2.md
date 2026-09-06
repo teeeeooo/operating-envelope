@@ -68,7 +68,7 @@ It must not contain product-domain rules, project-specific protected paths, mile
 Global Skills own reusable workflows that should be loaded only for relevant tasks. Initial target set:
 
 - `soluna`: explicit-only multi-agent allocation/orchestration workflow;
-- `design-interview`: explicit-only structured design interrogation derived from the useful generic part of `grill-me`;
+- `grill-me`: upstream-derived structured design interrogation with Codex-compatible questioning and guarded implicit invocation;
 - `desktop-table-ui`: reusable desktop table interaction contract;
 - `desktop-window-lifecycle`: reusable window/dialog/viewport/page lifecycle contract.
 `soluna` remains user-selected rather than implicitly triggered because it imposes a deliberate worker-allocation approval workflow. Its canonical source should move from legacy user Skill storage into this repository, then deploy to the current Codex user Skill location.
@@ -170,7 +170,7 @@ Target changes:
 
 - shrink root `AGENTS.md` to predictor-wide invariants and owner/Skill routing;
 - keep `calculator`, `ml-predictor`, and `packaging` repository Skills, removing duplicated global behavior;
-- extract the reusable part of `grill-me` into global `design-interview`, then retire the local duplicate;
+- retire the repo-local `grill-me` and use the upstream-derived global `grill-me` with a minimal Codex compatibility adaptation;
 - re-evaluate `ui-surface` after the global desktop UI Skills exist; keep it only if meaningful predictor-specific workflow remains;
 - retain `ACTIVE_DOCUMENTS.md` as the compact current-owner router and repair stale/malformed routes;
 - retain product/architecture truth in `PROJECT_CHARTER`, `project_brief`, `WORK_PLAN`, architecture docs, and source while removing duplicated harness prose;
@@ -224,7 +224,7 @@ operating-envelope/
 │   └── AGENTS.md                # canonical deployed global policy
 └── skills/
     ├── soluna/
-    ├── design-interview/
+    ├── grill-me/
     ├── desktop-table-ui/
     └── desktop-window-lifecycle/
 ```
@@ -241,7 +241,7 @@ Migration is deliberately staged so behavioral changes can be attributed to a sp
 1. Establish `operating-envelope` identity and governing design baseline.
 2. Create canonical global `AGENTS.md` and a minimal repo-local `AGENTS.md` for this repository.
 3. Migrate `soluna` canonical source and make invocation explicitly user-selected.
-4. Create `design-interview`, `desktop-table-ui`, and `desktop-window-lifecycle`.
+4. Canonicalize upstream-derived `grill-me`, plus `desktop-table-ui` and `desktop-window-lifecycle`.
 5. Deploy global policy/Skills to the Codex runtime locations and verify discovery/trigger behavior.
 
 ### Phase B — predictor migration

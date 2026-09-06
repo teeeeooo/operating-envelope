@@ -25,6 +25,6 @@ The intended layers are:
 - `global/AGENTS.md`: canonical content deployed to `~/.codex/AGENTS.md`
 
 - `skills/soluna/`: explicit-only multi-agent delivery workflow
-- `skills/design-interview/`: explicit-only design interrogation workflow
+- `skills/grill-me/`: upstream-derived design interrogation/stress-test workflow with guarded implicit invocation
 - `skills/desktop-table-ui/`: reusable desktop table interaction contract
 - `skills/desktop-window-lifecycle/`: reusable desktop window/dialog/page lifecycle contract
