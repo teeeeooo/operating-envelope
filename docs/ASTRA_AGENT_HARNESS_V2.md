@@ -48,7 +48,7 @@ L5  Historical Evidence  logs, retired designs, result records, diagnostics
 A rule should live at the lowest layer that still covers every place where it is valid. Do not copy a global rule into repository policy merely for visibility.
 ## 4. Global `AGENTS.md`
 
-Canonical source will live in this repository. The deployed user copy will live at `~/.codex/AGENTS.md`.
+Canonical source: [`global/AGENTS.md`](../global/AGENTS.md). Design contract: [`docs/GLOBAL_AGENTS_DESIGN.md`](GLOBAL_AGENTS_DESIGN.md). The deployed user copy will live at `~/.codex/AGENTS.md`.
 
 The global file should remain small. It owns only behavior that is valid across repositories, including:
 

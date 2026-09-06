@@ -16,3 +16,10 @@ The intended layers are:
 - repository Skills: task-specific workflows unique to that repository
 - project knowledge: architecture, validation, decisions, failures, current state, and compact recall indexes
 - historical evidence: logs, retired designs, result records, and diagnostics that should not act as current instructions
+
+
+## Canonical Sources
+
+- `docs/ASTRA_AGENT_HARNESS_V2.md`: shared architecture and migration baseline
+- `docs/GLOBAL_AGENTS_DESIGN.md`: admission, ownership, and validation rules for the global instruction layer
+- `global/AGENTS.md`: canonical content deployed to `~/.codex/AGENTS.md`
