@@ -1,0 +1,6 @@
+interface:
+  display_name: "Desktop Table UI"
+  short_description: "Apply consistent spreadsheet-like desktop table behavior"
+  default_prompt: "Use $desktop-table-ui to design or implement consistent table selection, editing, and clipboard behavior."
+policy:
+  allow_implicit_invocation: true

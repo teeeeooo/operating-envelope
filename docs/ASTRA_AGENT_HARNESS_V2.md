@@ -222,16 +222,14 @@ operating-envelope/
 │   └── ASTRA_AGENT_HARNESS_V2.md
 ├── global/
 │   └── AGENTS.md                # canonical deployed global policy
-├── skills/
-│   ├── soluna/
-│   ├── design-interview/
-│   ├── desktop-table-ui/
-│   └── desktop-window-lifecycle/
-└── templates/
-    └── small/                    # retained until separately migrated/retired
+└── skills/
+    ├── soluna/
+    ├── design-interview/
+    ├── desktop-table-ui/
+    └── desktop-window-lifecycle/
 ```
 
-Runtime locations such as `~/.codex/AGENTS.md` and `~/.agents/skills/*` are deployment surfaces. This repository owns their canonical source and migration history.
+Runtime locations such as `~/.codex/AGENTS.md` and `~/.codex/skills/*` are deployment surfaces. This repository owns their canonical source and migration history.
 
 Do not introduce an independent authoritative wiki for this harness. If a generated wiki is later useful, it must be reproducible from canonical source and clearly marked as a projection.
 

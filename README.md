@@ -2,7 +2,7 @@
 
 `operating-envelope` is the version-controlled canonical source for the user's agent harness: shared execution policy, reusable Skills, memory/recall architecture, and migration designs for repository-local agent environments.
 
-Runtime locations such as `~/.codex/AGENTS.md` and `~/.agents/skills/` are deployment surfaces, not the canonical design source. Repository-local projects keep their own invariants, domain truth, and task-specific Skills rather than copying this repository's full policy surface.
+Runtime locations such as `~/.codex/AGENTS.md` and `~/.codex/skills/` are deployment surfaces, not the canonical design source. Repository-local projects keep their own invariants, domain truth, and task-specific Skills rather than copying this repository's full policy surface.
 
 ## Current Direction
 
@@ -23,3 +23,8 @@ The intended layers are:
 - `docs/ASTRA_AGENT_HARNESS_V2.md`: shared architecture and migration baseline
 - `docs/GLOBAL_AGENTS_DESIGN.md`: admission, ownership, and validation rules for the global instruction layer
 - `global/AGENTS.md`: canonical content deployed to `~/.codex/AGENTS.md`
+
+- `skills/soluna/`: explicit-only multi-agent delivery workflow
+- `skills/design-interview/`: explicit-only design interrogation workflow
+- `skills/desktop-table-ui/`: reusable desktop table interaction contract
+- `skills/desktop-window-lifecycle/`: reusable desktop window/dialog/page lifecycle contract

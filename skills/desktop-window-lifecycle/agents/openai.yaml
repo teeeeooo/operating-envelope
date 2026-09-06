@@ -1,0 +1,6 @@
+interface:
+  display_name: "Desktop Window Lifecycle"
+  short_description: "Keep desktop window and dynamic page lifecycle consistent"
+  default_prompt: "Use $desktop-window-lifecycle to design or repair window, dialog, viewport, or dynamic page lifecycle behavior."
+policy:
+  allow_implicit_invocation: true

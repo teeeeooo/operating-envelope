@@ -1,0 +1,6 @@
+interface:
+  display_name: "Soluna"
+  short_description: "Astra-led delivery with bounded Luna delegation"
+  default_prompt: "Use $soluna with Main-owned design, user-approved worker allocation, protected acceptance, Luna implementation, and independent review."
+policy:
+  allow_implicit_invocation: false
