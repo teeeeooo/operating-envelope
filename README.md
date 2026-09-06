@@ -6,7 +6,7 @@ Runtime locations such as `~/.codex/AGENTS.md` and `~/.agents/skills/` are deplo
 
 ## Current Direction
 
-The current redesign targets GPT-6 Astra and follows OpenAI's guidance on instruction sensitivity, initiative and follow-through, explicit delegation policy, and proportional testing. The governing migration design will live under `docs/`.
+The current redesign targets GPT-6 Astra and follows OpenAI's guidance on instruction sensitivity, initiative and follow-through, explicit delegation policy, and proportional testing. The governing migration design is [`docs/ASTRA_AGENT_HARNESS_V2.md`](docs/ASTRA_AGENT_HARNESS_V2.md).
 
 The intended layers are:
 
