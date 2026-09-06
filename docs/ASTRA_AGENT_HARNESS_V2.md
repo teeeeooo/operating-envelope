@@ -79,7 +79,7 @@ Global Skills own reusable workflows that should be loaded only for relevant tas
 
 Visual design systems, business validation, domain schemas, and product-specific toolkit policies remain repository-local.
 
-A future `python-test-portability` Skill is P1, not part of the initial migration gate.
+A future `python-test-portability` Skill remains P1. Post-migration review approved only the genuinely cross-repository subset—filesystem/path identity, UTF-8 text I/O, non-interactive subprocess behavior, cwd/repo-root independence, and logical-artifact identity—as a global candidate; Qt/testkit-specific lifecycle rules remain repository-local.
 
 ## 6. Repository `AGENTS.md`
 
@@ -171,7 +171,7 @@ Target changes:
 - shrink root `AGENTS.md` to predictor-wide invariants and owner/Skill routing;
 - keep `calculator`, `ml-predictor`, and `packaging` repository Skills, removing duplicated global behavior;
 - retire the repo-local `grill-me` and use the upstream-derived global `grill-me` with a minimal Codex compatibility adaptation;
-- re-evaluate `ui-surface` after the global desktop UI Skills exist; keep it only if meaningful predictor-specific workflow remains;
+- retire repo-local `ui-surface`; reusable table/window behavior is global while predictor-specific UI ownership remains under `docs/ui_ux/`;
 - retain `ACTIVE_DOCUMENTS.md` as the compact current-owner router and repair stale/malformed routes;
 - retain product/architecture truth in `PROJECT_CHARTER`, `project_brief`, `WORK_PLAN`, architecture docs, and source while removing duplicated harness prose;
 - retain `project_log` as durable chronology, not as an always-read instruction source;
@@ -182,11 +182,11 @@ The mandatory Result Record lifecycle is retired for new work. Existing records 
 
 The existing agent change checker must be decoupled from mandatory `memory_review`, `memory_reason`, report-index updates, and seed updates. Mechanical engineering safeguards should remain only where they protect a real repository contract.
 
-The current 350-LOC hard gate should be reconsidered as a warning/review signal rather than a target that can force artificial code splits.
+The predictor migration resolves the 350-LOC hard gate as a warning/review signal rather than a failure threshold, avoiding artificial code splits.
 
 Repository-specific migration record target:
 
-`predictor_v3/docs/designs/2026-09-06-astra-agent-harness-v2-migration.md`
+`predictor_v3/docs/designs/2026-09-07-astra-agent-harness-v2-migration.md`
 ## 11. `oil_level_tracker` Migration
 
 Oil migration should occur on a dedicated harness/policy branch rather than being mixed into the current R21 feature branch unless repository state makes a separate branch impossible.
@@ -201,15 +201,15 @@ Target changes:
 - move the workflow half of S11 detector governance into a repo-local `s11-detector-change` Skill while retaining schema/checker rules in durable docs/code;
 - keep the detector logic map and causal failure registry as project knowledge, not Skills;
 - add a repo-local `windows-qualification` Skill;
-- split the current Windows operations surface so R7-R12 procedures cannot masquerade as the current R21 qualification procedure;
-- add a current R21-aware Windows qualification owner and reuse already-accepted local evidence unless source/runtime/contract changes invalidate it;
+- split the current Windows operations surface so R7-R12 procedures cannot masquerade as the current-candidate qualification procedure;
+- add a revision-neutral current-candidate Windows qualification owner that resolves identity from the Work Plan, allowing a later R21 merge without pre-promoting unmerged feature-branch truth;
 - relax `docs/README.md` mandatory-read behavior to document creation, move/rename/archive, owner changes, or unclear ownership.
 
-Oil may add a compact project-memory summary only if it materially improves routing beyond the existing work-plan, logic map, and failure registry.
+Oil now uses a compact `docs/00-project/recall-index.md` only as a routing layer over the existing work-plan, logic map, failure registry, reviewed truth, and retained commitments; it is not a second memory SSOT.
 
 Repository-specific migration record target:
 
-`oil_level_tracker/docs/00-project/agent-harness-v2-migration.md`
+`oil_level_tracker/docs/20-architecture/s11-agent-harness-v2-routing-design.md`
 
 ## 12. `operating-envelope` Target Structure
 The repository becomes the canonical source for the user-level harness rather than a template-only project.
@@ -258,13 +258,13 @@ Migration is deliberately staged so behavioral changes can be attributed to a sp
 2. Slim root/execution policy.
 3. Introduce S11 detector-change and Windows-qualification Skills.
 4. Split current Windows procedure from historical revision procedures.
-5. Verify current R21 qualification routing and existing governance checkers.
+5. Verify current-candidate qualification routing and existing governance checkers.
 
 ### Phase D — optional retrieval improvements
 After the core migration is stable:
 
 - evaluate a global `python-test-portability` Skill from genuinely shared rules;
-- pilot Graphify or another derived code-topology index in both repositories;
+- pilot Graphify or another derived code-topology index only when retrieval-cost evidence justifies a local tool dependency; predictor_v3 is the first candidate;
 - evaluate generated/disposable project wiki views only if they reduce retrieval cost;
 - consider moving Soluna role/model definitions into native Codex custom-agent configuration while keeping orchestration semantics in the Skill.
 
@@ -299,8 +299,8 @@ Predictor checks:
 Oil checks:
 
 - an S11 detector task loads only relevant logic-map/failure/validation owners;
-- R21 Windows qualification cannot select R7-R12 historical procedure as current guidance;
-- accepted local R21 evidence is reused unless an explicit invalidation condition is present;
+- current-candidate Windows qualification cannot select R7-R12 historical procedure as current guidance;
+- already-accepted local candidate evidence is reused unless an explicit invalidation condition is present;
 - governance checkers continue protecting the durable detector contract after workflow prose moves to a Skill.
 
 General repository checks:
@@ -310,16 +310,17 @@ General repository checks:
 - `git diff --check` passes;
 - changed policy surfaces are reviewed for hidden approval pauses, stale authority, and over-testing triggers.
 
-## 15. Deferred Decisions
+## 15. Post-Migration Decisions And Remaining Pilots
 
-The following are intentionally not resolved by the initial migration:
+Post-migration evidence resolved the initial open questions:
 
-- whether predictor keeps a small repo-local `ui-surface` Skill after global UI extraction;
-- whether predictor's 350-LOC signal remains a warning, becomes an exemption-based gate, or is removed;
-- whether Oil needs its own new project-memory summary beyond its strong existing failure registry;
-- whether Graphify provides enough accuracy/token savings to become a standard derived index;
+- predictor repo-local `ui-surface` is retired; global table/window Skills plus `docs/ui_ux/` cover the remaining ownership cleanly;
+- predictor's new-source 350-LOC rule is warning-first, not a hard failure gate;
+- Oil uses a compact recall index rather than a second project-memory SSOT;
+- Graphify is approved only as a future derived/disposable code-topology pilot, with predictor_v3 as the first candidate. It must never become authority for architecture, decisions, failure lessons, or current state, and no machine-level installation is part of this migration;
+- `python-test-portability` is approved as a P1 global Skill candidate only for genuinely shared Python test-portability rules. Oil-specific Qt lifecycle/QPA rules stay local.
 
-These decisions must be made from post-migration evidence rather than preemptive framework building.
+The remaining pilot decision is evidence-based adoption: Graphify or `python-test-portability` should be promoted to active global tooling only after a concrete cross-repository task demonstrates enough reuse or retrieval savings to justify the extra surface.
 
 ## 16. Governance of This Design
 
