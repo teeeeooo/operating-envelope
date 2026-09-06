@@ -16,7 +16,3 @@ The intended layers are:
 - repository Skills: task-specific workflows unique to that repository
 - project knowledge: architecture, validation, decisions, failures, current state, and compact recall indexes
 - historical evidence: logs, retired designs, result records, and diagnostics that should not act as current instructions
-
-## Existing Small Template
-
-`templates/small/` is retained as migration input from the repository's previous purpose. It is not automatically authoritative for the new harness architecture.

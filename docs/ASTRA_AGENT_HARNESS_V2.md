@@ -320,7 +320,6 @@ The following are intentionally not resolved by the initial migration:
 - whether predictor's 350-LOC signal remains a warning, becomes an exemption-based gate, or is removed;
 - whether Oil needs its own new project-memory summary beyond its strong existing failure registry;
 - whether Graphify provides enough accuracy/token savings to become a standard derived index;
-- whether the old `templates/small` tree should be rewritten for V2 or retired entirely.
 
 These decisions must be made from post-migration evidence rather than preemptive framework building.
 
