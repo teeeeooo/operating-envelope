@@ -148,7 +148,7 @@ Decision memory and code topology solve different problems and must not be confl
 
 Decision/failure records answer `why`, `why not`, and `what should not be repeated`. They should capture the durable decision, rationale, rejected or failed alternative when relevant, current owner, supersession status, and the trigger for reconsideration.
 
-Code search or a derived code graph answers `where`, `what calls this`, and `what is connected`. `ACTIVE_DOCUMENTS`, source search, symbol search, and a future Graphify pilot may serve this layer.
+Code search or a derived code graph answers `where`, `what calls this`, and `what is connected`. `ACTIVE_DOCUMENTS`, source search, symbol search, and the bounded Oil S11 Graphify pilot may serve this layer.
 
 A generated wiki or code graph must remain a disposable projection unless separately promoted through evidence. It does not replace source, architecture owners, decision records, or validation contracts.
 
@@ -264,7 +264,7 @@ Migration is deliberately staged so behavioral changes can be attributed to a sp
 After the core migration is stable:
 
 - evaluate a global `python-test-portability` Skill from genuinely shared rules;
-- pilot Graphify or another derived code-topology index only when retrieval-cost evidence justifies a local tool dependency; predictor_v3 is the first candidate;
+- pilot Graphify first in `oil_level_tracker` on the bounded S11 detector/application/publication topology; keep generated graph state local/disposable and use source/current owners as authority;
 - evaluate generated/disposable project wiki views only if they reduce retrieval cost;
 - consider moving Soluna role/model definitions into native Codex custom-agent configuration while keeping orchestration semantics in the Skill.
 
@@ -310,6 +310,13 @@ General repository checks:
 - `git diff --check` passes;
 - changed policy surfaces are reviewed for hidden approval pauses, stale authority, and over-testing triggers.
 
+Hook/CI checks:
+
+- `operating-envelope` runs a lightweight canonical harness/Skill CI on `main` and pull requests;
+- predictor checkouts install `core.hooksPath=.githooks` via a repository script, while the generic repository-policy CI is separated from AHRI/Calculator validation;
+- Oil keeps its existing `.githooks/pre-push` detector-governance check paired with the same CI checker;
+- derived Graphify freshness never becomes a blocking correctness hook during the bounded pilot.
+
 ## 15. Post-Migration Decisions And Remaining Pilots
 
 Post-migration evidence resolved the initial open questions:
@@ -317,10 +324,10 @@ Post-migration evidence resolved the initial open questions:
 - predictor repo-local `ui-surface` is retired; global table/window Skills plus `docs/ui_ux/` cover the remaining ownership cleanly;
 - predictor's new-source 350-LOC rule is warning-first, not a hard failure gate;
 - Oil uses a compact recall index rather than a second project-memory SSOT;
-- Graphify is approved only as a future derived/disposable code-topology pilot, with predictor_v3 as the first candidate. It must never become authority for architecture, decisions, failure lessons, or current state, and no machine-level installation is part of this migration;
+- Graphify is an active bounded pilot in `oil_level_tracker` S11. The pilot host uses local `graphifyy` tooling, but the repository does not require Graphify as a correctness dependency. Exact symbol/literal lookup remains source-search-first; Graphify is reserved for relational topology, affected callers/tests, and blast radius. Its graph is derived/disposable and never overrides source, logic-map, architecture, failure, or current-state owners;
 - `python-test-portability` is approved as a P1 global Skill candidate only for genuinely shared Python test-portability rules. Oil-specific Qt lifecycle/QPA rules stay local.
 
-The remaining pilot decision is evidence-based adoption: Graphify or `python-test-portability` should be promoted to active global tooling only after a concrete cross-repository task demonstrates enough reuse or retrieval savings to justify the extra surface.
+The Oil Graphify smoke/benchmark found useful transitive caller/test relationships but also showed that bounded scope can hide a real caller until the scope is corrected; five exact-symbol comparisons also showed literal `rg` is materially faster. Keep task-start incremental refresh and optional agent-managed watch, leave Graphify Git hooks uninstalled during the pilot, and decide long-term adoption only after repeated real S11 work. `python-test-portability` should still wait for concrete cross-repository reuse evidence.
 
 ## 16. Governance of This Design
 
