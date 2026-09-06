@@ -28,3 +28,4 @@ The intended layers are:
 - `skills/grill-me/`: upstream-derived design interrogation/stress-test workflow with guarded implicit invocation
 - `skills/desktop-table-ui/`: reusable desktop table interaction contract
 - `skills/desktop-window-lifecycle/`: reusable desktop window/dialog/page lifecycle contract
+- `skills/python-test-portability/`: reusable Python test portability contract

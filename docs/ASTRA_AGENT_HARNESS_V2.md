@@ -70,7 +70,8 @@ Global Skills own reusable workflows that should be loaded only for relevant tas
 - `soluna`: explicit-only multi-agent allocation/orchestration workflow;
 - `grill-me`: upstream-derived structured design interrogation with Codex-compatible questioning and guarded implicit invocation;
 - `desktop-table-ui`: reusable desktop table interaction contract;
-- `desktop-window-lifecycle`: reusable window/dialog/viewport/page lifecycle contract.
+- `desktop-window-lifecycle`: reusable window/dialog/viewport/page lifecycle contract;
+- `python-test-portability`: reusable Python test portability across OS/cwd/text/subprocess/logical-artifact boundaries.
 `soluna` remains user-selected rather than implicitly triggered because it imposes a deliberate worker-allocation approval workflow. Its canonical source should move from legacy user Skill storage into this repository, then deploy to the current Codex user Skill location.
 
 `desktop-table-ui` should own behavior such as selection, keyboard navigation, copy/paste, rectangular paste, clipboard representation, read-only/edit semantics, scrolling, batch editing, and selection preservation. It should be framework-neutral first; Qt/Tkinter details belong in optional references only when repeated need justifies them.
@@ -79,7 +80,7 @@ Global Skills own reusable workflows that should be loaded only for relevant tas
 
 Visual design systems, business validation, domain schemas, and product-specific toolkit policies remain repository-local.
 
-A future `python-test-portability` Skill remains P1. Post-migration review approved only the genuinely cross-repository subset—filesystem/path identity, UTF-8 text I/O, non-interactive subprocess behavior, cwd/repo-root independence, and logical-artifact identity—as a global candidate; Qt/testkit-specific lifecycle rules remain repository-local.
+`python-test-portability` is now a global implicit Skill after predictor repo-root/cwd regressions and Oil portability rules established real cross-repository reuse. It owns only filesystem/path identity, UTF-8 text I/O, non-interactive subprocess behavior, cwd/repo-root independence, logical-artifact identity, and semantic assertion guidance; Qt/testkit-specific lifecycle rules remain repository-local.
 
 ## 6. Repository `AGENTS.md`
 
@@ -263,7 +264,7 @@ Migration is deliberately staged so behavioral changes can be attributed to a sp
 ### Phase D — optional retrieval improvements
 After the core migration is stable:
 
-- evaluate a global `python-test-portability` Skill from genuinely shared rules;
+- maintain the global `python-test-portability` Skill from genuinely shared rules only;
 - pilot Graphify first in `oil_level_tracker` on the bounded S11 detector/application/publication topology; keep generated graph state local/disposable and use source/current owners as authority;
 - evaluate generated/disposable project wiki views only if they reduce retrieval cost;
 - consider moving Soluna role/model definitions into native Codex custom-agent configuration while keeping orchestration semantics in the Skill.
@@ -325,9 +326,9 @@ Post-migration evidence resolved the initial open questions:
 - predictor's new-source 350-LOC rule is warning-first, not a hard failure gate;
 - Oil uses a compact recall index rather than a second project-memory SSOT;
 - Graphify is an active bounded pilot in `oil_level_tracker` S11. The pilot host uses local `graphifyy` tooling, but the repository does not require Graphify as a correctness dependency. Exact symbol/literal lookup remains source-search-first; Graphify is reserved for relational topology, affected callers/tests, and blast radius. Its graph is derived/disposable and never overrides source, logic-map, architecture, failure, or current-state owners;
-- `python-test-portability` is approved as a P1 global Skill candidate only for genuinely shared Python test-portability rules. Oil-specific Qt lifecycle/QPA rules stay local.
+- `python-test-portability` is implemented as an implicit global Skill for genuinely shared Python portability rules. Oil-specific Qt lifecycle/QPA rules stay local.
 
-The Oil Graphify smoke/benchmark found useful transitive caller/test relationships but also showed that bounded scope can hide a real caller until the scope is corrected; five exact-symbol comparisons also showed literal `rg` is materially faster. Keep task-start incremental refresh and optional agent-managed watch, leave Graphify Git hooks uninstalled during the pilot, and decide long-term adoption only after repeated real S11 work. `python-test-portability` should still wait for concrete cross-repository reuse evidence.
+The Oil Graphify smoke/benchmark found useful transitive caller/test relationships but also showed that bounded scope can hide a real caller until the scope is corrected; five exact-symbol comparisons also showed literal `rg` is materially faster. Keep task-start incremental refresh and optional agent-managed watch, leave Graphify Git hooks uninstalled during the pilot, and decide long-term adoption only after repeated real S11 work. `python-test-portability` was promoted only after concrete predictor/Oil reuse evidence appeared.
 
 ## 16. Governance of This Design
 

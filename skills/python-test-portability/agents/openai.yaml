@@ -1,0 +1,6 @@
+interface:
+  display_name: "Python Test Portability"
+  short_description: "Keep Python tests portable across OS, cwd, locale, and subprocess boundaries"
+  default_prompt: "Use $python-test-portability to make this Python test or helper portable without weakening its real contract."
+policy:
+  allow_implicit_invocation: true

@@ -14,6 +14,7 @@ REQUIRED_SKILLS = {
     "grill-me": True,
     "desktop-table-ui": True,
     "desktop-window-lifecycle": True,
+    "python-test-portability": True,
 }
 
 
