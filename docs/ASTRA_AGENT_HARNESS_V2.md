@@ -72,7 +72,7 @@ Global Skills own reusable workflows that should be loaded only for relevant tas
 - `desktop-table-ui`: reusable desktop table interaction contract;
 - `desktop-window-lifecycle`: reusable window/dialog/viewport/page lifecycle contract;
 - `python-test-portability`: reusable Python test portability across OS/cwd/text/subprocess/logical-artifact boundaries.
-`soluna` remains user-selected rather than implicitly triggered because it imposes a deliberate worker-allocation approval workflow. Its canonical source should move from legacy user Skill storage into this repository, then deploy to the current Codex user Skill location.
+`soluna` remains user-selected rather than implicitly triggered because it imposes a deliberate worker-allocation approval workflow. Its canonical source lives in this repository and is deployed to the current Codex user Skill location. Main may finish short authorized tasks directly when delegation overhead outweighs the work; same-problem Luna follow-ups may reuse useful context within the approved allocation. Independent audits remain fresh and Main retains design and final acceptance.
 
 `desktop-table-ui` should own behavior such as selection, keyboard navigation, copy/paste, rectangular paste, clipboard representation, read-only/edit semantics, scrolling, batch editing, and selection preservation. It should be framework-neutral first; Qt/Tkinter details belong in optional references only when repeated need justifies them.
 

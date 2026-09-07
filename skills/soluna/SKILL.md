@@ -17,7 +17,7 @@ Main owns the user's goals, design, integration judgment, and final acceptance. 
 ## Role contract
 
 - Main owns intake, original outcomes, protected acceptance, repository-backed design, worker allocation, evidence reconciliation, final judgment, and user reporting.
-- Main may perform read-only intake and design before worker-allocation approval. It may also continue safe independent work while approved workers run.
+- Main may complete short, authorized work directly when handoff and review would cost more than the work. Worker-allocation approval governs child dispatch, not Main’s existing task authority. Keep overlapping edits serialized.
 - A Luna Explorer is optional and read-only. It maps code, documents, call relationships, tests, and impact boundaries without deciding architecture.
 - Luna implementers own only their approved source/test/documentation scope and permitted commits.
 - A fresh Luna auditor independently reviews the exact head and stays read-only through its audit decision.
@@ -32,7 +32,8 @@ Main owns the user's goals, design, integration judgment, and final acceptance. 
 - Never silently substitute an approved child model or effort. If that combination is unavailable, report `BLOCKED` and request direction.
 - Main owns delegation by default. Child agents must not spawn further agents unless the approved allocation explicitly grants one bounded child delegation to that stage.
 - Auditors never delegate repair and never accept another agent's conclusion as audit evidence without direct verification.
-- Default to one Luna implementer. Add a second only for genuinely independent work without shared-file or sequential dependency.
+- When delegation is worthwhile, default to one Luna implementer. Add a second only for genuinely independent work without shared-file or sequential dependency.
+- Prefer reusing a Luna worker for substantive follow-ups on the same problem while its context remains useful and the approved allocation covers the work. Start fresh when the goal or ownership changes substantially, or stale assumptions repeatedly obstruct progress; reuse never expands authority. Independent audits still require a fresh Luna.
 
 ## Workflow
 
@@ -42,13 +43,13 @@ Use only the phases the task needs:
 
 Optional approved branches include `EXPLORE_LUNA`, `EVIDENCE_LUNA`, `SPECIALIST_ASTRA`, and bounded `REPAIR_LUNA -> AUDIT_LUNA`. Use `AUTHORITY_WAIT` only when a later external mutation needs authority not already present.
 
-Main-only read-only work does not require allocation approval. If no child agent will be dispatched, do not invent an allocation approval unless the user explicitly asked to approve a Main-only plan.
+For a short Main-only task, implement and verify within existing authority, then close without worker phases or worker-allocation records. Do not invent allocation approval unless the user explicitly asked to approve a Main-only plan. Delegated work retains independent audit and Main final acceptance.
 
 ## Worker-allocation approval
 
 - Before the first child-agent dispatch, Main presents one concrete allocation and obtains explicit user approval. The original task request is not this allocation approval.
-- The allocation names Main's responsibilities; each child worker's count, role, bounded scope, exact model/effort, dependencies, timing, and mutation authority; and any bounded repair or closeout reuse. Main's own model/effort is outside the allocation because the user selects the root session.
-- Approval governs worker topology and delegated authority. It does not prevent Main from doing authorized read-only analysis, design, or integration work.
+- The allocation names Main's responsibilities; each child worker's count, role, bounded scope, exact model/effort, dependencies, timing, and mutation authority; and any bounded follow-up, repair, or closeout reuse. Main's own model/effort is outside the allocation because the user selects the root session.
+- Approval governs worker topology and delegated authority. It does not prevent Main from doing authorized work directly under the role contract.
 - Reapproval is required when worker count, role, model/effort, delegated scope, dependency structure, or mutation authority materially changes.
 - Head movement, evidence updates, ordinary implementation choices, and editorial specification wording do not by themselves invalidate allocation approval.
 - A change to the frozen outcome/acceptance contract is material. Record the revised contract and obtain fresh allocation approval before further child-agent dispatch.
@@ -63,7 +64,7 @@ Main-only read-only work does not require allocation approval. If no child agent
 
 ## State and handoff
 
-Use [scripts/workflow_state.py](scripts/workflow_state.py) for compact state outside the repository. Store decisions, identities, artifact paths, findings, evidence references, steering revision, and next gate; keep raw logs and detailed reports elsewhere.
+For delegated work, use [scripts/workflow_state.py](scripts/workflow_state.py) for compact state outside the repository. Store decisions, identities, artifact paths, findings, evidence references, steering revision, and next gate; keep raw logs and detailed reports elsewhere.
 
 Before dispatch, read [references/handoff-contract.md](references/handoff-contract.md). Handoffs must be constraint-complete and method-light. Pass artifact references rather than conversation history.
 

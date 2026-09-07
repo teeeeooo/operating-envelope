@@ -17,7 +17,7 @@ Changing this frozen contract is material and clears any current worker-allocati
 Create a JSON object with:
 
 - `main`: object naming Main responsibilities. Do not encode or validate the current Main session's model/effort here; the user owns that root-session choice.
-- `stages`: ordered child-worker objects with stable `id`, worker `count`, `role`, bounded `scope`, exact `model` and `effort`, dependencies/timing, and mutation authority. Include bounded repair or closeout reuse when intended.
+- `stages`: ordered child-worker objects with stable `id`, worker `count`, `role`, bounded `scope`, exact `model` and `effort`, dependencies/timing, and mutation authority. Include bounded same-problem follow-up, repair, or closeout reuse when intended. Reuse within that approved scope does not itself require a new allocation; role or authority changes still do.
 - `authority`: overall delegated modification/commit/push/PR boundaries; absent authority is not granted.
 
 For child stages only, any `gpt-6-astra` entry must use `low` or `medium`; the helper rejects higher Astra effort. Luna stages may use any reasoning effort supported by `gpt-5.6-luna`, selected by Main and recorded exactly in the allocation presented to the user.

@@ -35,7 +35,7 @@ Main reviews directly:
 1. frozen outcome contract and protected baseline;
 2. exact base/head and complete changed scope;
 3. load-bearing implementation and high-risk adjacent owners;
-4. Luna audit card and unresolved findings;
+4. Luna audit card and unresolved findings for delegated work (not applicable to a short Main-only task);
 5. evidence provenance/invalidation; and
 6. authority for the next external mutation.
 

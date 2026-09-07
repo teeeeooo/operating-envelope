@@ -4,7 +4,7 @@ Read this before dispatching a Luna Explorer, evidence worker, implementer, audi
 
 ## Required sections
 
-Keep each handoff concise and use these sections in order:
+For a new worker, keep the handoff concise and use these sections in order:
 
 1. **Role and authority** — role, permitted mutations, prohibited actions, exact model/effort, and whether bounded child delegation is explicitly granted.
 2. **Identity gate** — repository path, branch/worktree, expected base/head, clean/dirty expectations.
@@ -15,6 +15,8 @@ Keep each handoff concise and use these sections in order:
 7. **Report contract** — compact gate card plus a path to detailed evidence.
 
 Self-contained means the agent can start from identity, authority, artifacts, invariants, acceptance, and next gate. It does not mean copying repository or conversation history.
+
+For an existing worker, send the new objective and changed identity, scope, constraints, or evidence; reference still-valid context instead of repeating the full handoff. Write a separate summary only when a successor needs context not already recoverable from current artifacts. Reused context and summaries never replace current source or verification.
 
 ## Method-light rule
 
