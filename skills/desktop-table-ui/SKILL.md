@@ -43,6 +43,8 @@ For paste, define how source rows/columns map to the selected rectangle, how ove
 - Preserve selection and scroll position when a refresh does not invalidate them.
 - Do not let a visual refresh silently commit an in-progress edit unless the existing interaction contract requires it.
 - Keep read-only cells non-editable through keyboard, mouse, paste, and batch paths consistently.
+- Distinguish empty, zero, invalid, read-only, and inactive states; the domain validator decides whether an empty value is allowed. Apply the same state permissions to inline edit, paste, clear, and batch paths.
+- Where undo is supported, make one user edit, paste, or clear one undo action. Define undo-history lifetime when the underlying data context changes so undo cannot restore values into a different dataset.
 - Avoid duplicate local event handlers when an existing table abstraction can own the behavior once.
 
 ## Implementation approach

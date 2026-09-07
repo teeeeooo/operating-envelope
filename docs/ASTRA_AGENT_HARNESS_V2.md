@@ -232,6 +232,8 @@ operating-envelope/
 
 Runtime locations such as `~/.codex/AGENTS.md` and `~/.codex/skills/*` are deployment surfaces. This repository owns their canonical source and migration history.
 
+These are the verified paths for the current desktop host. Other hosts may expose different user Skill roots, including the officially documented `~/.agents/skills`; use [host deployment checks](DEPLOYMENT.md) rather than treating a path spelling as a universal migration invariant. The six layers are logical ownership boundaries, not a requirement to create empty policy/knowledge files for every new project.
+
 Do not introduce an independent authoritative wiki for this harness. If a generated wiki is later useful, it must be reproducible from canonical source and clearly marked as a projection.
 
 ## 13. Migration Sequence

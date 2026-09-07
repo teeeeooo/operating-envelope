@@ -4,6 +4,8 @@
 
 Runtime locations such as `~/.codex/AGENTS.md` and `~/.codex/skills/` are deployment surfaces, not the canonical design source. Repository-local projects keep their own invariants, domain truth, and task-specific Skills rather than copying this repository's full policy surface.
 
+`~/.codex/skills/` is the verified deployment on this desktop host, not a universal discovery rule for every Codex host. See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for host selection and optional runtime equality checks.
+
 ## Current Direction
 
 The current redesign targets GPT-6 Astra and follows OpenAI's guidance on instruction sensitivity, initiative and follow-through, explicit delegation policy, and proportional testing. The governing migration design is [`docs/ASTRA_AGENT_HARNESS_V2.md`](docs/ASTRA_AGENT_HARNESS_V2.md).

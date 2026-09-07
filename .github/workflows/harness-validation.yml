@@ -18,6 +18,8 @@ jobs:
           python-version: '3.11'
       - name: Validate canonical harness structure
         run: python3 scripts/validate_harness.py
+      - name: Test host deployment validation
+        run: python3 -B scripts/test_validate_harness.py
       - name: Validate Soluna workflow state
         run: python3 skills/soluna/scripts/test_workflow_state.py
       - name: Compile Soluna scripts

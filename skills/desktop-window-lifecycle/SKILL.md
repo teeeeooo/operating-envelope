@@ -41,6 +41,7 @@ Avoid timer-driven repeated refit, resize, or re-layout loops as a workaround fo
 - Separate persisted application state, session state, view state, and transient interaction state.
 - Restore only state whose lifetime actually spans the reopen/recreate boundary.
 - Ensure subscriptions, callbacks, timers, and background work are disconnected or transferred when their owning surface is disposed.
+- When an operation needs progress UI, let it render before work begins and keep its lifecycle tied to the operation. Success, failure, and supported cancellation must settle the progress state and restore appropriate controls; closing a dialog does not itself cancel background work.
 
 ## Implementation approach
 
