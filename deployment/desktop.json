@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": [
+    "agent-policy-maintenance",
+    "desktop-table-ui",
+    "desktop-window-lifecycle",
+    "grill-me",
+    "python-test-portability"
+  ],
+  "absent_skills": [
+    "soluna"
+  ]
+}

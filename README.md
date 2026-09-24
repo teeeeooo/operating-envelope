@@ -26,7 +26,9 @@ The intended layers are:
 - `docs/GLOBAL_AGENTS_DESIGN.md`: admission, ownership, and validation rules for the global instruction layer
 - `global/AGENTS.md`: canonical content deployed to `~/.codex/AGENTS.md`
 
-- `skills/soluna/`: explicit-only multi-agent delivery workflow
+- `skills/soluna/`: canonical explicit-only workflow, intentionally not installed on this desktop
+- `skills/agent-policy-maintenance/`: focused instruction/Skill consolidation and owner-aware maintenance
+- `deployment/desktop.json`: selected and intentionally absent desktop Skills; a repository manifest, not native Codex configuration
 - `skills/grill-me/`: upstream-derived design interrogation/stress-test workflow with guarded implicit invocation
 - `skills/desktop-table-ui/`: reusable desktop table interaction contract
 - `skills/desktop-window-lifecycle/`: reusable desktop window/dialog/page lifecycle contract

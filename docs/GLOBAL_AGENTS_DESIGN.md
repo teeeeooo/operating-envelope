@@ -35,7 +35,7 @@ A rule belongs in global `AGENTS.md` only when all of the following are true:
 
 ## Owned behavior
 
-The global contract owns five narrow concerns.
+The global contract owns six narrow concerns.
 
 ### 1. Initiative and completion
 
@@ -62,6 +62,12 @@ Memory is routing evidence, not automatic authority for drift-prone facts. Verif
 ### 5. Verification calibration
 
 Match verification depth to the size, risk, and boundary of the change. Prefer focused checks first. Do not repeat already-sufficient passing checks unless a later change, failure, explicit requirement, or unresolved concern invalidates that evidence.
+
+### 6. Existing-owner discovery
+
+Before adding helpers, functionality, or integration wiring, search by both name and responsibility, follow callers/registrations, and broaden beyond an initial directory before concluding no owner exists. Reuse or extend the existing owner unless a concrete requirement justifies a separate implementation. Bound discovery and do not refactor merely to eliminate superficial similarity. For creation/registration/dispatch changes, verify the real entry path as well as isolated behavior.
+
+The 2026-09-22 reconciliation preserves this deployed refinement in canonical source; runtime-only edits must not silently become a second policy owner.
 
 ## Side-effect boundary
 

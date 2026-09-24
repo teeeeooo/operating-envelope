@@ -5,7 +5,7 @@ This repository is the canonical source for the user-level Codex agent harness.
 ## Ownership
 
 - `global/AGENTS.md` owns the canonical global working agreements deployed to `~/.codex/AGENTS.md`.
-- `skills/<name>/` owns canonical reusable Skills deployed to `~/.codex/skills/<name>/`.
+- `skills/<name>/` owns the canonical reusable Skill catalog; `deployment/desktop.json` selects which Skills are installed or intentionally absent on this desktop. Follow `docs/DEPLOYMENT.md` rather than deploying the entire catalog.
 - `docs/ASTRA_AGENT_HARNESS_V2.md` owns the shared harness architecture and migration sequence.
 - Focused design documents may refine one layer but must not silently contradict the governing architecture.
 

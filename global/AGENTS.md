@@ -16,6 +16,14 @@
 - Prefer the smallest sufficient change that respects the repository's current architecture and explicit constraints.
 - Treat repository-local instructions as the owner of repository-specific invariants and routing.
 
+## Inspect before implementing
+
+- Before adding functionality, helpers, scripts, or integration wiring, search for existing implementations by both name and responsibility.
+- Start with relevant owners and paths. Before concluding that functionality is absent, broaden the search across the repository; a miss in one directory is not evidence of repository-wide absence.
+- Inspect relevant callers, registrations, and entry points to establish how existing code is used and which component owns the responsibility.
+- Prefer reusing or extending the existing owner when it fits. Introduce a separate implementation only for a concrete requirement or boundary that the existing implementation cannot reasonably serve; explain that reason briefly in the implementation summary.
+- Keep discovery proportional and stop when ownership and the reuse decision are supported. Do not force unrelated abstractions or refactors merely to eliminate superficially similar code.
+
 ## Use Skills deliberately
 
 - Use a Skill when the task matches its reusable workflow; do not treat Skill guidance as higher authority than the user's explicit request.
@@ -33,6 +41,7 @@
 - Match verification depth to the size, risk, and boundary of the change; prefer focused checks first.
 - Do not repeat already-sufficient passing checks unless a later change, failure, explicit requirement, or unresolved concern invalidates that evidence.
 - Broaden verification when focused checks fail, the change crosses important boundaries, or the user explicitly requests broader evidence.
+- Review new code for overlapping responsibilities with existing code. When changing creation, registration, dispatch, or integration wiring, verify the relevant real entry path as well as isolated behavior.
 - Report the material change, verification performed, and any unresolved risk or limitation.
 
 ## External side effects
