@@ -43,6 +43,10 @@ Avoid timer-driven repeated refit, resize, or re-layout loops as a workaround fo
 - Ensure subscriptions, callbacks, timers, and background work are disconnected or transferred when their owning surface is disposed.
 - When an operation needs progress UI, let it render before work begins and keep its lifecycle tied to the operation. Success, failure, and supported cancellation must settle the progress state and restore appropriate controls; closing a dialog does not itself cancel background work.
 
+## Geometry and dynamic refit
+
+When a requested change affects first-show placement, automatic fitting, monitor/viewport recovery, or dynamic content refit, read [the geometry and refit workflow](references/geometry-and-refit.md) before choosing the implementation and relevant checks. Ordinary copy, domain logic, or lifecycle work unrelated to geometry does not require this reference.
+
 ## Implementation approach
 
 1. Inspect the current surface owner, navigation/window manager, state owner, and lifecycle hooks.
