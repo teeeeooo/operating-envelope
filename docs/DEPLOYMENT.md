@@ -6,11 +6,25 @@
 
 This desktop retains the previously selected deployment at `~/.codex/skills/` and global guidance at `~/.codex/AGENTS.md`. File equality can be verified independently; do not describe a retained path as a fresh host-discovery result.
 
-The [official Skills documentation](https://developers.openai.com/codex/skills), checked 2026-09-22, documents `~/.agents/skills/` as a USER discovery location. Do not classify that path as universally retired. Inspect actual host discovery before choosing or migrating a deployment root; do not copy the same managed Skills into multiple discovered roots. Same-name Skills are not merged. The 2026-09-22 Codv app-server discovery probe was command-blocked, so fresh host discovery remains unverified.
+The [official Skills documentation](https://developers.openai.com/codex/skills), checked 2026-09-22, documents `~/.agents/skills/` as a USER discovery location. Do not classify that path as universally retired. Inspect actual host discovery before choosing or migrating a deployment root; do not copy the same managed Skills into multiple discovered roots. Same-name Skills are not merged. The 2026-09-22 Codv probe was command-blocked. A fresh CLI app-server probe on 2026-09-25 succeeded as described below; it does not establish desktop-app parity or model behavior.
 
 `deployment/desktop.json` classifies every canonical Skill as selected or intentionally absent. It is a repository-owned validation manifest, not native Codex configuration. Soluna remains canonical and explicit-only, but is intentionally absent from this desktop. Catalog membership must not reinstall it. Another host can supply `--deployment-manifest /absolute/path/host.json`.
 
 Check for a nonempty global `AGENTS.override.md` and duplicate managed Skill names across the host's discovered roots. A successful byte comparison alone does not prove that the host loaded those files.
+
+## Observed CLI discovery (2026-09-25)
+
+Codex CLI `0.153.4`, with shell `CODEX_HOME` unset, successfully queried the
+[official app-server discovery API](https://learn.chatgpt.com/docs/app-server)
+using `skills/list` with `forceReload: true`. No extra roots, config overrides,
+model turns, or user-session restarts were used. The five selected managed Skills
+were enabled at `~/.codex/skills/`; Soluna was absent. This supports retaining
+that root. Raw inventories and instruction-path checks remain in the separate
+2026-09-22 audit folder's `evidence/2026-09-25-discovery.json` and
+`evidence/2026-09-25-instruction-chain.json`.
+
+CLI discovery does not establish desktop-app inventory parity, actual instruction
+consumption, or fresh-model activation and behavior; those remain separate checks.
 
 ## Checks
 
