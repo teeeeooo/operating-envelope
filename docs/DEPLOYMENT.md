@@ -23,8 +23,13 @@ that root. Raw inventories and instruction-path checks remain in the separate
 2026-09-22 audit folder's `evidence/2026-09-25-discovery.json` and
 `evidence/2026-09-25-instruction-chain.json`.
 
-CLI discovery does not establish desktop-app inventory parity, actual instruction
-consumption, or fresh-model activation and behavior; those remain separate checks.
+Six independent read-only CLI probes on the same date observed the intended
+Skill selection/non-selection and required May Web reference reads. The current
+configured model was `gpt-6-astra` with medium reasoning. Prompts, traces, findings,
+and limits remain in the separate audit's
+`evidence/2026-09-25-behavior/REPORT.md`. These single-run planning/review probes
+do not establish desktop-app parity, statistical activation reliability, or
+reference timing and product outcomes during real implementation.
 
 ## Checks
 
