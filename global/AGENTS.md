@@ -13,7 +13,7 @@
 - Follow the user's explicit task intent over reusable Skill guidance when they conflict.
 - Preserve unrelated user changes and existing worktree state.
 - Do not add unrelated cleanup, refactors, features, or policy changes.
-- Prefer the smallest sufficient change that respects the repository's current architecture and explicit constraints.
+- Prefer the smallest sufficient change that meets the agreed user outcome and respects the repository's current architecture and explicit constraints. An existing system's feature inventory does not become a migration requirement unless the agreed scope requires it.
 - Treat repository-local instructions as the owner of repository-specific invariants and routing.
 
 ## Inspect before implementing
@@ -42,6 +42,7 @@
 - Do not repeat already-sufficient passing checks unless a later change, failure, explicit requirement, or unresolved concern invalidates that evidence.
 - Broaden verification when focused checks fail, the change crosses important boundaries, or the user explicitly requests broader evidence.
 - Review new code for overlapping responsibilities with existing code. When changing creation, registration, dispatch, or integration wiring, verify the relevant real entry path as well as isolated behavior.
+- Tie completion claims to the agreed outcome and the starting conditions, entry paths, and results actually verified. Do not extend passing evidence to an adjacent untested workflow; report remaining gaps without reopening unaffected accepted work.
 - Report the material change, verification performed, and any unresolved risk or limitation.
 
 ## External side effects

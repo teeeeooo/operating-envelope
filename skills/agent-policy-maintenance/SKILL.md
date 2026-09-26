@@ -13,6 +13,12 @@ Keep useful instructions easy to discover without copying product truth into a g
 - When discovery or invocation behavior matters, consult current official documentation and the installed host. Preserve a working deployment root until a host check supports migration; do not duplicate same-name Skills across discovered roots.
 - Treat user-requested opt-outs, explicit-only invocation, system-managed Skills, unrelated installed Skills, and existing security configuration as boundaries to preserve.
 
+## Diagnose before adding rules
+
+- Classify the observed failure as missing guidance, existing guidance not applied, conflicting guidance, or a missing deterministic check. Identify the current owner and the decision that failed.
+- When a valid rule already exists, improve its routing, evidence, or verification step rather than appending a synonym. Add a global rule only for a stable cross-project behavior; keep the motivating incident in the audit.
+- Separate official guidance, local observations, and the chosen adaptation. Use representative matching and non-matching requests to check that the change addresses the failure without expanding unrelated work.
+
 ## Choose the smallest owner
 
 - Global AGENTS: stable, broadly useful execution behavior only.
