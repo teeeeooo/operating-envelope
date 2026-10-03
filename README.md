@@ -33,3 +33,4 @@ The intended layers are:
 - `skills/desktop-table-ui/`: reusable desktop table interaction contract
 - `skills/desktop-window-lifecycle/`: reusable desktop window/dialog/page lifecycle contract
 - `skills/python-test-portability/`: reusable Python test portability contract
+- `skills/docs-management/`: documentation structure and lifecycle for new or existing projects, including audit, compaction and archival; repository policy stays with each project

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Documentation Management"
+  short_description: "Structure and manage docs for new or existing projects"
+  default_prompt: "Use $docs-management to establish or improve this project's documentation structure, ownership and lifecycle while preserving existing contracts and evidence."
+policy:
+  allow_implicit_invocation: true

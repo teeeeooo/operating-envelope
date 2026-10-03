@@ -4,6 +4,7 @@
     "agent-policy-maintenance",
     "desktop-table-ui",
     "desktop-window-lifecycle",
+    "docs-management",
     "grill-me",
     "python-test-portability"
   ],
