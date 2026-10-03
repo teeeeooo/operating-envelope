@@ -23,12 +23,34 @@ class HarnessValidationTests(unittest.TestCase):
                             ignore=shutil.ignore_patterns("__pycache__"))
         shutil.copyfile(self.root / "global/AGENTS.md", self.home / "AGENTS.md")
         shutil.copytree(self.root / "skills", self.skills)
-        self.names = set(validator.REQUIRED_SKILLS)
         self.addCleanup(patch.stopall)
         patch.object(validator, "ROOT", self.root).start()
+        self.names = validator.discover_skills()
 
     def check_runtime(self):
         validator.validate_runtime(self.home, self.skills, self.names)
+
+    def test_discovery_includes_optional_skills_and_ignores_non_skills(self):
+        (self.root / "skills/new-workflow").mkdir()
+        (self.root / "skills/__pycache__").mkdir()
+        (self.root / "skills/README.md").write_text("catalog", encoding="utf-8")
+        self.assertNotIn("new-workflow", validator.REQUIRED_SKILLS)
+        self.assertEqual(validator.discover_skills(), self.names | {"new-workflow"})
+
+    def test_new_selected_skill_is_checked_for_runtime_drift(self):
+        new = self.root / "skills/new-workflow"
+        shutil.copytree(self.root / "skills/desktop-table-ui", new)
+        shutil.copytree(new, self.skills / "new-workflow")
+        manifest = self.root / "deployment/desktop.json"
+        data = json.loads(manifest.read_text(encoding="utf-8"))
+        data["skills"].append("new-workflow")
+        manifest.write_text(json.dumps(data), encoding="utf-8")
+        selected, absent = validator.load_deployment(manifest, validator.discover_skills())
+        shutil.rmtree(self.skills / "soluna")
+        validator.validate_runtime(self.home, self.skills, selected, absent)
+        (self.skills / "new-workflow/SKILL.md").write_text("drift", encoding="utf-8")
+        with self.assertRaisesRegex(SystemExit, "new-workflow differs"):
+            validator.validate_runtime(self.home, self.skills, selected, absent)
 
     def test_explicit_host_root_and_unmanaged_skill_are_allowed(self):
         (self.skills / "unrelated").mkdir()
