@@ -31,6 +31,14 @@ def read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
+def discover_skills() -> set[str]:
+    """Return the full canonical catalog, beyond the required-policy baseline."""
+    return {
+        path.name for path in (ROOT / "skills").iterdir()
+        if path.is_dir() and path.name != "__pycache__"
+    }
+
+
 def validate_skill(name: str, implicit: bool | None = None) -> None:
     root = ROOT / "skills" / name
     skill = read(root / "SKILL.md")
@@ -127,7 +135,7 @@ def main() -> int:
     if "Global Working Agreements" not in global_agents:
         fail("global/AGENTS.md is not the canonical global contract")
 
-    names = {path.name for path in (ROOT / "skills").iterdir() if path.is_dir() and path.name != "__pycache__"}
+    names = discover_skills()
     missing = REQUIRED_SKILLS.keys() - names
     if missing:
         fail(f"missing required skills: {', '.join(sorted(missing))}")
